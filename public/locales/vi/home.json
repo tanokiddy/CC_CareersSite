@@ -1,0 +1,170 @@
+{
+  "hero_section": {
+    "place_holder": "Nhập công việc bạn tìm kiếm...",
+    "swiper_items": [
+      {
+        "title": "<span>Trình duyệt và Tìm kiếm</span> do người Việt, cho người Việt",
+        "src": "/images/cc_home_banner_1.png",
+        "alt": "cc_home_banner_1"
+      },
+      {
+        "title": "Phát triển con người",
+        "src": "/images/cc_home_banner_2.png",
+        "alt": "cc_home_banner_2"
+      },
+      {
+        "title": "<span>Môi trường</span> tôn trọng và trao quyền",
+        "src": "/images/cc_home_banner_3.png",
+        "alt": "cc_home_banner_3"
+      }
+    ]
+  },
+  "job_section": {
+    "title": "Top Jobs",
+    "button_more": "Xem tất cả việc làm"
+  },
+  "benefit_section": {
+    "title": "Khám phá đãi ngộ và phúc lợi",
+    "desc": "Cốc Cốc luôn hướng đến môi trường làm việc tích cực mà ở đó mỗi nhân viên đều được tôn trọng, trao quyền và phát triển tối đa tiềm năng bản thân.<br><br> Đồng thời, Cốc Cốc luôn nỗ lực để đảm bảo chính sách đãi ngộ và phúc lợi phù hợp và linh hoạt vì chúng tôi trân trọng những giá trị mà đội ngũ nhân viên mang lại.",
+    "images": [
+      {
+        "title": "Phát triển nghề nghiệp",
+        "src": "/images/cc_fat_1.png",
+        "alt": "cc_fat_1",
+        "btn_title": "Xem chi tiết"
+      },
+      {
+        "title": "Phúc lợi cạnh tranh",
+        "src": "/images/cc_fat_2.png",
+        "alt": "cc_fat_2",
+        "btn_title": "Xem chi tiết"
+      },
+      {
+        "title": "Môi trường tích cực",
+        "src": "/images/cc_fat_3.png",
+        "alt": "cc_fat_3",
+        "btn_title": "Xem chi tiết"
+      }
+    ],
+    "dialog": [
+      {
+        "title": "Lợi ích cạnh tranh",
+        "desc": [
+          "Chế độ lương thưởng cạnh tranh cùng lương tháng thứ 13 hàng năm.",
+          "Làm việc trong môi trường đa dạng với những đồng nghiệp tài năng và đối tác/khách hàng là người Việt Nam và người nước ngoài",
+          "Nghỉ phép hưởng nguyên lương lên đến 19 ngày/năm cùng 1 ngày nghỉ vào sinh nhật.",
+          "Làm việc từ thứ Hai đến thứ Sáu. Chính sách làm việc tại nhà hàng năm.",
+          "Bảo hiểm sức khoẻ nâng cao 24/7 cho toàn thể nhân viên.",
+          "Phúc lợi Công Đoàn hấp dẫn như sinh nhật, kết hôn, sinh con..."
+        ]
+      },
+      {
+        "title": "Phát triển nghề nghiệp",
+        "desc": [
+          "Cơ hội học hỏi và phát triển các kỹ năng thông qua chương trình đào tạo đa dạng và văn hoá chia sẻ nội bộ tại Cốc Cốc",
+          "Làm việc trong môi trường đa dạng với những",
+          "Làm việc trong môi trường đa dạng với những đồng nghiệp tài năng và đối tác/khách hàng là người Việt Nam và người nước ngoài."
+        ]
+      },
+      {
+        "title": "Môi trường tích cực",
+        "desc": [
+          "Các sự kiện nội bộ đặc sắc giúp bạn gắn kết với đại gia đình Cốc Cốc.",
+          "Khu vực ăn uống với rất nhiều đồ ăn, nước ép cùng với trà/cà phê hằng ngày.",
+          "Nhiều câu lạc bộ thú vị để bạn chia sẻ đam mê như CLB Tiếng Anh, Yoga, Bi-a, Bóng đá."
+        ]
+      }
+    ]
+  },
+  "product_section": {
+    "swiper_items": [
+      {
+        "title": "Các sản phẩm chính",
+        "desc": "Cốc Cốc được thành lập từ 2010 với ba sản phẩm công nghệ chính là Trình duyệt, Công cụ tìm kiếm và Nền tảng quảng cáo Cốc Cốc. Các sản phẩm này được phát triển cho cả hai nền tảng: di động và máy tính.",
+        "button_more": "Xem thêm về Cốc Cốc",
+        "src": "/images/product_intro_1.png",
+        "alt": "product_item_1"
+      },
+      {
+        "title": "Tôn chỉ phát triển",
+        "desc": "Với phương châm 'người dùng là trên hết', chúng tôi tập trung xây dựng và phát triển các tính năng, sản phẩm dựa trên nhu cầu thực tiễn của người dùng Internet Việt.",
+        "button_more": "Xem thêm về Cốc Cốc",
+        "src": "/images/product_intro_2.png",
+        "alt": "product_item_2"
+      },
+      {
+        "title": "Thành tựu đã đạt được",
+        "desc": "Trong nhiều năm liên tiếp, Cốc Cốc đứng thứ 2 tại Việt Nam về thị phần trình duyệt và công cụ tìm kiếm. Đến nay, chúng tôi đã có trên 29 triệu người dùng ở cả 2 nền tảng máy tính và điện thoại động.",
+        "button_more": "Xem thêm về Cốc Cốc",
+        "src": "/images/product_intro_3.png",
+        "alt": "product_item_3"
+      },
+      {
+        "title": "Tự hào Make in Vietnam",
+        "desc": "Trên thế giới chỉ có khoảng 10 quốc gia tự phát triển trình duyệt và công cụ tìm kiếm nội địa. Việt Nam là một trong số đó với đại diện là Cốc Cốc.",
+        "button_more": "Xem thêm về Cốc Cốc",
+        "src": "/images/product_intro_4.png",
+        "alt": "product_item_4"
+      }
+    ]
+  },
+  "form_section": {
+    "title": "Để lại Email của bạn và nhận các thông báo tuyển dụng hấp dẫn từ chúng tôi!",
+    "btn_title": "Gửi",
+    "place_holder": "Nhập Email của bạn ...",
+    "images": {
+      "src": "/images/cc_fat_form.png",
+      "alt": "cc_fat_form"
+    },
+    "related_items": {
+      "title": "Có thể bạn quan tâm",
+      "items": [
+        {
+          "title": "Cuốc sống tại Cốc Cốc",
+          "desc": "Những khoảnh khắc hạnh phúc mà chúng tôi đã cùng nhau tạo ra",
+          "href": "/life-at-coc-coc",
+          "image": {
+            "src": "/images/cc_related_1.png",
+            "alt": "cc_related_1"
+          }
+        },
+        {
+          "title": "Tài năng trẻ với Cốc Cốc",
+          "desc": "Các hoạt động kết nối được Cốc Cốc thiết kế dành riêng cho thế hệ tài năng trẻ",
+          "href": "fresher-with-coc-coc",
+          "image": {
+            "src": "/images/cc_related_2.png",
+            "alt": "cc_related_2"
+          }
+        },
+        {
+          "title": "Blog nghề nghiệp",
+          "desc": "Các bài viết chia sẻ kinh nghiệm và góc nhìn của người Cốc Cốc",
+          "href": "blogs",
+          "image": {
+            "src": "/images/cc_related_3.png",
+            "alt": "cc_related_3"
+          }
+        }
+      ]
+    }
+  },
+  "search_section": {
+    "title": "Tìm kiếm vị trí phù hợp ngay hôm nay!",
+    "place_holder": "Nhập công việc bạn tìm kiếm...",
+    "btn_title": "Tìm kiếm",
+    "departments": [
+      { "department": ["Marketing & Communication", "Product & Design"] },
+      {
+        "department": ["Engineering & Technology", "Sales, Service & Support"]
+      },
+      { "department": ["People, Finance & Legal", "Xem tất cả việc làm"] }
+    ]
+  },
+  "glassdoor_section": {
+    "title": "Glassdoor Review",
+    "btn_title": "Xem thêm tại glassdoor.com",
+    "image": "/images/cc_ico_ceo.png",
+    "alt": "cc_ico_ceo"
+  }
+}
