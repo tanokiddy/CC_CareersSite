@@ -3,13 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useTranslation } from "next-i18next";
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import clsx from "clsx";
+import { Button, ButtonLink } from "@/components/atoms/components/Button/Button";
+import { ArrowLeft, ArrowRight } from "@/components/atoms/icons";
 
 import IconButtonMore from "./IconButtonMore";
-import { Button, ButtonLink } from "@coccoc-ui/react";
-import {
-  ArrowRight,
-  ArrowLeft,
-} from "@coccoc-ui/icons";
 
 SwiperCore.use([Pagination, Navigation]);
 
@@ -84,7 +81,7 @@ export default function ProductSection() {
           >
             <ButtonLink
               variant="transparent"
-              className="p-0 [&>span]:px-0"
+              className="!p-0 [&>span]:px-0"
               iconEnd={<IconButtonMore />}
               href="https://coccoc.com"
               target="_blank"

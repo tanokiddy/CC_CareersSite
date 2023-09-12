@@ -3,7 +3,10 @@ import React from "react";
 
 const btn_variant = {
   green: "bg-primary-60",
-  transparent: "!bg-transparent text-grayscale-20",
+  transparent:
+    "!bg-transparent text-grayscale-20 text-primary-60 hover:text-primary-40",
+  orangeGradient:
+    "bg-gradient-to-b from-[#FF9838] from-0% to-[#FF6438] to-100% hover:from-[#de471d] hover:to-[#de471d] active:from-[#b82901] active:to-[#b82901] font-semibold",
 };
 
 const btn_size = {
@@ -24,7 +27,7 @@ function Button(props) {
   return (
     <button
       className={clsx(
-        "flex items-center outline-none rounded-lg text-grayscale-100 font-normal",
+        "flex items-center justify-center outline-none rounded-lg text-grayscale-100 font-normal",
         btn_variant[variant],
         btn_size[size],
         className
@@ -49,9 +52,10 @@ function ButtonLink(props) {
     className,
     variant = "green",
     size = "md",
+    target = "_self",
     ...rest
   } = props;
-  
+
   return (
     <a
       href={href}
@@ -61,6 +65,7 @@ function ButtonLink(props) {
         btn_size[size],
         className
       )}
+      target={target}
       {...rest}
     >
       {iconStart ? iconStart : null}

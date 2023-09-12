@@ -1,7 +1,7 @@
-import { ButtonLink } from "@coccoc-ui/react";
-import { cx } from "@coccoc-ui/utils";
 import React from "react";
 import { useTranslation } from "next-i18next";
+import clsx from "clsx";
+import { ButtonLink } from "@/components/atoms/components/Button/Button";
 
 export default function RelateSection() {
   const { t } = useTranslation("home");
@@ -11,7 +11,7 @@ export default function RelateSection() {
   if (!related_items) return null;
   return (
     <section
-      className={cx(
+      className={clsx(
         "px-4 py-[60px] space-y-6 w-full",
         "lg:max-w-[1366px] lg:px-32 lg:py-20 lg:mx-auto"
       )}
@@ -20,7 +20,7 @@ export default function RelateSection() {
         {related_items.title}
       </h2>
       <div
-        className={cx(
+        className={clsx(
           "space-y-6 flex flex-col",
           "md:flex-row md:space-y-0 md:space-x-[30px]"
         )}
@@ -31,7 +31,7 @@ export default function RelateSection() {
             key={index}
             href={item.href}
             target="_blank"
-            className={cx(
+            className={clsx(
               "flex-1 p-0 w-full h-full group",
               "[&>span]:p-0 [&>span]:space-y-4 [&>span]:w-full"
             )}
