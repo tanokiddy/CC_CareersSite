@@ -1,11 +1,13 @@
-import CCTextField from "@/components/coccoc-ui/CCTextField/CCTextField";
 import React from "react";
 import { useTranslation } from "next-i18next";
 import IconDot from "../Product/IconDot";
 import clsx from "clsx";
 
-import { AngleRight, Search } from "@coccoc-ui/icons";
-import { Button, ButtonLink, useWindowSize } from "@coccoc-ui/react";
+import useWindowSize from "@/hooks/useWindowSize";
+import { Button, ButtonLink } from "@/components/atoms/components/Button/Button";
+import { SearchIcon } from "@/components/atoms/icons";
+import AngleRight from "@/components/atoms/icons/AngleRight";
+import TextField from "@/components/atoms/components/TextField/TextField";
 
 export default function SearchSection() {
   const { t } = useTranslation("home");
@@ -23,7 +25,7 @@ export default function SearchSection() {
         )}
       >
         <div className="relative md:w-1/2 lg:flex-1 lg:w-full">
-          <CCTextField
+          <TextField
             className={clsx(
               "placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:p-[13px]",
               "md:[&>input]:p-[15px]"
@@ -31,9 +33,9 @@ export default function SearchSection() {
             placeholder={content.place_holder}
           />
           <Button
-            iconEnd={<Search />}
+            iconEnd={<SearchIcon />}
             className={clsx(
-              "p-2 [&>span]:p-0 absolute right-[6.5px] top-[6.5px]",
+              "!p-2 [&>span]:p-0 absolute right-[6.5px] !top-[6.5px]",
               "md:top-[8px] md:right-[8px]"
             )}
           />
@@ -61,7 +63,7 @@ export default function SearchSection() {
                 variant="transparent"
                 iconEnd={isDesktop ? <IconDot /> : <AngleRight />}
                 className={clsx(
-                  "p-0 [&>span]:p-0 text-[18px] leading-[26px] text-grayscale-40 font-semibold",
+                  "!p-0 [&>span]:p-0 text-[18px] leading-[26px] !text-grayscale-40 font-semibold",
                   "lg:text-2xl",
                   "xl:text-[28px] xl:leading-9 ",
                   "lg:[&>svg]:m-[10px] lg:[&>svg]:ml-[18px]",

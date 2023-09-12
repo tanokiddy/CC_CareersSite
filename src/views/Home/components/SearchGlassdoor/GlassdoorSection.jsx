@@ -1,10 +1,10 @@
-import { ButtonLink } from "@coccoc-ui/react";
 import React from "react";
 import { useTranslation } from "next-i18next";
 import clsx from "clsx";
 
-import IconButtonMore from "../Product/IconButtonMore";
 import IconStar from "./IconStar";
+import IconButtonMore from "../Product/IconButtonMore";
+import { ButtonLink } from "@/components/atoms/components/Button/Button";
 
 export default function GlassdoorSection({ glassdoor }) {
   const { t } = useTranslation("home");
@@ -19,7 +19,7 @@ export default function GlassdoorSection({ glassdoor }) {
         </h2>
         <ButtonLink
           variant="transparent"
-          className="p-0 [&>span]:p-0"
+          className="!p-0 [&>span]:p-0"
           iconEnd={<IconButtonMore />}
           href="https://www.glassdoor.com/Reviews/C%E1%BB%91c-C%E1%BB%91c-Reviews-E887996.htm"
           target="_blank"
@@ -44,7 +44,7 @@ export default function GlassdoorSection({ glassdoor }) {
               ))}
             </div>
           </div>
-          <div className={clsx("space-x-6 flex flex-wrap", "lg:space-x-12")}>
+          <div className={clsx("space-x-6 flex flex-wrap", "lg:space-x-0")}>
             <div
               className={clsx(
                 "flex space-x-3 flex-1 items-center max-w-[192px] w-full"
