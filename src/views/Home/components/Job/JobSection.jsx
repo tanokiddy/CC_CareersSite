@@ -1,9 +1,8 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import clsx from "clsx";
-
-import { ButtonLink } from "@coccoc-ui/react";
-import { ArrowRight } from "@coccoc-ui/icons";
+import { ButtonLink } from "@/components/atoms/components/Button/Button";
+import ArrowRight from "@/components/atoms/icons/ArrowRight";
 
 export default function JobSection({ hotJob }) {
   const { t } = useTranslation("home");
@@ -29,7 +28,7 @@ export default function JobSection({ hotJob }) {
             href="/jobs"
             iconEnd={<ArrowRight />}
             variant="transparent"
-            className="p-0"
+            className="!p-0"
             target="_blank"
           >
             {content.button_more}
@@ -41,14 +40,15 @@ export default function JobSection({ hotJob }) {
           {topJob.map((job) => (
             <ButtonLink
               className={clsx(
-                "group py-[60px] w-full rounded-lg flex flex-col [&>*:first-child]:space-y-4 bg-grayscale-95 transition-all duration-300 ease-in-out justify-between flex-1",
+                "group py-[60px] w-full rounded-lg flex flex-col [&>*:first-child]:space-y-4 !bg-grayscale-95 transition-all duration-300 ease-in-out justify-between flex-1",
                 "md:p-6 md:[&>*:first-child]:space-y-6 md:h-[196px]",
                 "lg:max-w-[255px]",
-                "hover:bg-primary-50",
-                "active:bg-primary-40"
+                "hover:!bg-primary-50",
+                "active:!bg-primary-40"
               )}
               href={`/job/${job.job_slug}`}
               key={job.job_slug}
+              target='_blank'
             >
               <div className="flex justify-between space-x-2">
                 <p className="text-sm text-grayscale-50 font-normal group-hover:text-grayscale-100 line-clamp-1">

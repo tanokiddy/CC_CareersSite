@@ -13,30 +13,33 @@ const TextField = ({
   className,
   placeHolder,
   size = "md",
+  required,
   ...rest
 }) => {
   return (
     <div
       className={clsx(
-        "w-fit relative [&>label]:absolute [&>label]:top-2",
+        "w-full relative [&>label]:absolute [&>label]:top-2",
         iconStart ? "[&>label]:left-2" : "",
         iconEnd ? "[&>label]:right-2" : "",
         input_size[size],
         className
       )}
     >
-      <label htmlFor="customInput">{iconStart ? iconStart : null} </label>
+      {iconStart ? <label htmlFor="customInput">{iconStart}</label> : null}
       <input
+        required={required}
         id="customInput"
         disabled={disabled}
         type="text"
         placeholder={placeHolder}
         className={clsx(
           "outline-none border-grayscale-90 border border-solid rounded-lg placeholder:text-grayscale-60",
-          "focus:border-primary-60 focus:shadow-[0_0_0_1px_#4FBA69] focus:outline-none",
+          "focus:border-primary-60 focus:shadow-[0_0_0_1px_#4FBA69] focus:outline-none w-full",
           iconStart ? "!pl-10" : "",
           iconEnd ? "!pr-10" : ""
         )}
+        {...rest}
       />
       {iconEnd ? iconEnd : null}
     </div>

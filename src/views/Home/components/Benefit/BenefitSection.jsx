@@ -1,9 +1,10 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import clsx from "clsx";
+import Close from "@/components/atoms/icons/Close";
+import { Button } from "@/components/atoms/components/Button/Button";
 
-import { Button, Dialog, Tabs } from "@coccoc-ui/react";
-import { Close } from "@coccoc-ui/icons";
+// import { Dialog, Tabs } from "@coccoc-ui/react";
 
 export default function BenefitSection() {
   const { t } = useTranslation("home");
@@ -58,7 +59,7 @@ export default function BenefitSection() {
               <p className="font-semibold line-clamp-1 text-[18px] leading-[26px] text-grayscale-30">
                 {item.title}
               </p>
-              <Dialog.Root>
+              {/* <Dialog.Root>
                 <Dialog.Trigger
                   className={clsx(
                     "w-fit px-4 py-2 text-sm font-semibold text-primary-60 mx-auto border-[1px] border-solid border-primary-60 rounded-lg outline-none focus-visible:outline-none",
@@ -129,7 +130,7 @@ export default function BenefitSection() {
                     </Tabs.Root>
                   </Dialog.Content>
                 </Dialog.Portal>
-              </Dialog.Root>
+              </Dialog.Root> */}
             </div>
           </div>
         ))}

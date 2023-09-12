@@ -2,9 +2,9 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import RelateSection from "./RelateSection";
 import clsx from "clsx";
+import { Button } from "@/components/atoms/components/Button/Button";
+import TextField from "@/components/atoms/components/TextField/TextField";
 
-import CCTextField from "@/components/coccoc-ui/CCTextField/CCTextField";
-import { Button } from "@coccoc-ui/react";
 
 export default function FormSubmitSection() {
   const { t } = useTranslation("home");
@@ -53,12 +53,12 @@ export default function FormSubmitSection() {
                 "md:flex-row md:space-y-0 md:space-x-2"
               )}
             >
-              <CCTextField
+              <TextField
                 required
-                placeholder={content.place_holder}
-                className={clsx("placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:p-[13px]", "md:[&>input]:p-[15px]")}
+                placeHolder={content.place_holder}
+                className={clsx("placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:!p-[13px]", "md:[&>input]:!p-[15px]")}
               />
-              <Button color="orangeGradient" className="w-full md:w-fit">
+              <Button variant="orangeGradient" className="w-full md:w-fit">
                 {content.btn_title}
               </Button>
             </div>
