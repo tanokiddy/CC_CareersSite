@@ -64,6 +64,7 @@ export default function SearchSection() {
                 iconEnd={isDesktop ? <IconDot /> : <AngleRight />}
                 className={clsx(
                   "!p-0 [&>span]:p-0 text-[18px] leading-[26px] !text-grayscale-40 font-semibold",
+                  "hover:!text-primary-40 active:!text-primary-30",
                   "lg:text-2xl",
                   "xl:text-[28px] xl:leading-9 ",
                   "lg:[&>svg]:m-[10px] lg:[&>svg]:ml-[18px]",
