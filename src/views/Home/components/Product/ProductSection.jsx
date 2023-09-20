@@ -92,10 +92,10 @@ export default function ProductSection() {
           </div>
         </div>
         <div className="flex justify-center ">
-          <Button className="button-prev-product [&>span]:p-0 m-[7px] rounded-full">
+          <Button className="button-prev-product !p-2 [&>span]:!p-0 !m-[7px] !rounded-full">
             <ArrowLeft />
           </Button>
-          <Button className="button-next-product [&>span]:p-0 m-[7px] rounded-full">
+          <Button className="button-next-product !p-2 [&>span]:!p-0 !m-[7px] !rounded-full">
             <ArrowRight />
           </Button>
         </div>

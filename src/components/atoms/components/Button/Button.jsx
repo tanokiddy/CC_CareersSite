@@ -2,9 +2,9 @@ import clsx from "clsx";
 import React from "react";
 
 const btn_variant = {
-  green: "bg-primary-60",
+  green: "bg-primary-60 hover:bg-primary-40 active:bg-primary-30",
   transparent:
-    "!bg-transparent text-grayscale-20 text-primary-60 hover:text-primary-40",
+    "!bg-transparent text-primary-60 hover:text-primary-40 active:text-primary-30",
   orangeGradient:
     "bg-gradient-to-b from-[#FF9838] from-0% to-[#FF6438] to-100% hover:from-[#de471d] hover:to-[#de471d] active:from-[#b82901] active:to-[#b82901] font-semibold",
 };
@@ -27,7 +27,7 @@ function Button(props) {
   return (
     <button
       className={clsx(
-        "flex items-center justify-center outline-none rounded-lg text-grayscale-100 font-normal",
+        "flex items-center justify-center outline-none rounded-lg text-grayscale-100 font-semibold disabled:pointer-events-none disabled:text-grayscale-50 disabled:opacity-[0.38]",
         btn_variant[variant],
         btn_size[size],
         className
@@ -60,7 +60,7 @@ function ButtonLink(props) {
     <a
       href={href}
       className={clsx(
-        "flex items-center outline-none outline-offset-2 rounded-lg text-grayscale-100 font-semibold w-fit",
+        "flex items-center outline-none outline-offset-2 rounded-lg text-grayscale-100 font-semibold w-fit cursor-pointer",
         btn_variant[variant],
         btn_size[size],
         className
