@@ -6,11 +6,15 @@ import FormSubmitSection from "./components/Form/FormSubmitSection";
 import SearchGlassdoorSection from "./components/SearchGlassdoor/SearchGlassdoorSection";
 import { InferGetStaticPropsType } from "next";
 import { getStaticProps } from "@/pages";
+import { GlassdoorType, HotJobType } from "./stately";
 
 export const HomeView = ({
   hotJob,
   glassdoor,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: {
+  hotJob: HotJobType;
+  glassdoor: GlassdoorType;
+}) => {
   return (
     <>
       <HeroSection />

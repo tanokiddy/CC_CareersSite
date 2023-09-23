@@ -3,13 +3,17 @@ import { useTranslation } from "next-i18next";
 import clsx from "clsx";
 import Close from "@/components/atoms/icons/Close";
 import { Button } from "@/components/atoms/components/Button/Button";
+import { BenefitContentType } from "@/types/Home";
 
 // import { Dialog, Tabs } from "@coccoc-ui/react";
 
 export default function BenefitSection() {
   const { t } = useTranslation("home");
-  const content = t("benefit_section", { returnObjects: true });
+  const content: BenefitContentType = t("benefit_section", {
+    returnObjects: true,
+  });
   if (!content) return null;
+  
   return (
     <section
       className={clsx(
@@ -45,11 +49,16 @@ export default function BenefitSection() {
             )}
             key={item.alt}
           >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className={clsx("h-auto max-w-[316px] w-full object-cover mx-auto")}
-            />
+            {
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={item.src}
+                alt={item.alt}
+                className={clsx(
+                  "h-auto max-w-[316px] w-full object-cover mx-auto"
+                )}
+              />
+            }
             <div
               className={clsx(
                 "text-center flex flex-col space-y-2",

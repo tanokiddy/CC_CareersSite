@@ -2,8 +2,13 @@ import React from "react";
 import SearchSection from "./SearchSection";
 import GlassdoorSection from "./GlassdoorSection";
 import clsx from "clsx";
+import { GlassdoorType } from "../../stately";
 
-export default function SearchGlassdoorSection({ glassdoor }) {
+export default function SearchGlassdoorSection({
+  glassdoor,
+}: {
+  glassdoor: GlassdoorType;
+}) {
   return (
     <div className="bg-grayscale-95">
       <div
@@ -13,7 +18,7 @@ export default function SearchGlassdoorSection({ glassdoor }) {
         )}
       >
         <SearchSection />
-        <GlassdoorSection glassdoor={glassdoor}/>
+        <GlassdoorSection glassdoor={glassdoor} />
       </div>
     </div>
   );

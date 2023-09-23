@@ -4,7 +4,7 @@ import React from "react";
 type ButtonType = {
   iconStart?: JSX.Element | null;
   iconEnd?: JSX.Element | null;
-  children: string | null;
+  children?: JSX.Element | string | null;
   className: string;
   variant?: 'green' | 'transparent' | 'orangeGradient';
   size?: 'md' | 'lg';
@@ -81,9 +81,9 @@ function ButtonLink(props: ButtonType) {
       {...rest}
     >
       {iconStart ? iconStart : null}
-      <span className={clsx(iconStart || iconEnd ? "px-2" : "")}>
+      <div className={clsx(iconStart || iconEnd ? "px-2" : "")}>
         {children}
-      </span>
+      </div>
       {iconEnd ? iconEnd : null}
     </a>
   );

@@ -1,18 +1,21 @@
 import { HomeView } from "@/views/Home";
-import { getGlassdoor } from "@/views/Home/stately/GetGlassdoor";
-import { getHotJob } from "@/views/Home/stately/GetHotJob";
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { GetStaticProps, GetStaticPropsContext } from "next";
 import {
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-} from "next";
+  GlassdoorType,
+  HotJobType,
+  getGlassdoor,
+  getHotJob,
+} from "@/views/Home/stately";
 
 export default function HomePage({
   hotJob,
   glassdoor,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: {
+  hotJob: HotJobType;
+  glassdoor: GlassdoorType;
+}) {
   return <HomeView hotJob={hotJob} glassdoor={glassdoor} />;
 }
 

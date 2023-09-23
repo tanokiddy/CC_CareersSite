@@ -4,13 +4,13 @@ import RelateSection from "./RelateSection";
 import clsx from "clsx";
 import { Button } from "@/components/atoms/components/Button/Button";
 import TextField from "@/components/atoms/components/TextField/TextField";
-
+import { FormContentType } from "@/types/Home";
 
 export default function FormSubmitSection() {
   const { t } = useTranslation("home");
-  const content = t("form_section", { returnObjects: true });
+  const content: FormContentType = t("form_section", { returnObjects: true });
 
-  if(!content) return null
+  if (!content) return null;
   return (
     <>
       <section
@@ -26,11 +26,14 @@ export default function FormSubmitSection() {
           )}
         >
           <div className="flex-1 mx-auto">
-            <img
-              src={content?.images?.src}
-              alt={content?.images?.alt}
-              className={clsx("object-cover h-full", "md:w-auto md:h-full")}
-            />
+            {
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={content?.images?.src}
+                alt={content?.images?.alt}
+                className={clsx("object-cover h-full", "md:w-auto md:h-full")}
+              />
+            }
           </div>
           <div
             className={clsx(
@@ -56,7 +59,10 @@ export default function FormSubmitSection() {
               <TextField
                 required
                 placeHolder={content.place_holder}
-                className={clsx("placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:!p-[13px]", "md:[&>input]:!p-[15px]")}
+                className={clsx(
+                  "placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:!p-[13px]",
+                  "md:[&>input]:!p-[15px]"
+                )}
               />
               <Button variant="orangeGradient" className="w-full md:w-fit">
                 {content.btn_title}
@@ -65,7 +71,7 @@ export default function FormSubmitSection() {
           </div>
         </div>
       </section>
-      <RelateSection />
+      <RelateSection content={content}/>
     </>
   );
 }

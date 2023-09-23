@@ -1,9 +1,21 @@
 import { get } from "@/utils/fetchAPI";
 
 export type HotJobType = {
-  glassdoor_approve_of_ceo: number;
-  glassdoor_rating: number;
-  glassdoor_recommend_to_a_friend: number;
+  total: number;
+  per_page: number;
+  items: JobItemType[];
+};
+
+export type JobItemType = {
+  id: number;
+  title: string;
+  excerpt: string;
+  department: string;
+  location: string;
+  salary: string;
+  job_time: string;
+  job_category: string;
+  job_slug: string;
 };
 
 export const getHotJob = () => get<HotJobType>(process.env.NEXT_PUBLIC_JOB_API as string);

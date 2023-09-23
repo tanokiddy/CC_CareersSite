@@ -7,17 +7,7 @@ import { Button } from "@/components/atoms/components/Button/Button";
 import SearchIcon from "@/components/atoms/icons/SearchIcon";
 import clsx from "clsx";
 import TextField from "@/components/atoms/components/TextField/TextField";
-
-type HeroContentType = {
-  place_holder: string;
-  swiper_items: SwiperItemType[];
-};
-
-type SwiperItemType = {
-  title: string;
-  src: string;
-  alt: string;
-};
+import { HeroContentType } from "@/types/Home";
 
 SwiperCore.use([Navigation, Pagination]);
 

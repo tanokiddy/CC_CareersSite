@@ -8,10 +8,11 @@ import { Button, ButtonLink } from "@/components/atoms/components/Button/Button"
 import { SearchIcon } from "@/components/atoms/icons";
 import AngleRight from "@/components/atoms/icons/AngleRight";
 import TextField from "@/components/atoms/components/TextField/TextField";
+import { SearchSectionType } from "@/types/Home";
 
 export default function SearchSection() {
   const { t } = useTranslation("home");
-  const content = t("search_section", { returnObjects: true });
+  const content:SearchSectionType = t("search_section", { returnObjects: true });
   const size = useWindowSize();
   const isDesktop = size.width > 1023;
   if (!content) return null;
@@ -30,7 +31,7 @@ export default function SearchSection() {
               "placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:p-[13px]",
               "md:[&>input]:p-[15px]"
             )}
-            placeholder={content.place_holder}
+            placeHolder={content.place_holder}
           />
           <Button
             iconEnd={<SearchIcon />}
