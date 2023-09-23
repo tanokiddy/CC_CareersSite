@@ -4,9 +4,13 @@ import BenefitSection from "./components/Benefit/BenefitSection";
 import ProductSection from "./components/Product/ProductSection";
 import FormSubmitSection from "./components/Form/FormSubmitSection";
 import SearchGlassdoorSection from "./components/SearchGlassdoor/SearchGlassdoorSection";
-import { HomePageProps } from "@/pages";
+import { InferGetStaticPropsType } from "next";
+import { getStaticProps } from "@/pages";
 
-export const HomeView = ({ hotJob, glassdoor }: HomePageProps) => {
+export const HomeView = ({
+  hotJob,
+  glassdoor,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <HeroSection />
