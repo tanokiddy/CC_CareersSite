@@ -2,7 +2,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
       sm: "640px",
@@ -113,4 +113,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}

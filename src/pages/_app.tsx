@@ -1,9 +1,10 @@
 import React from "react";
 import { appWithTranslation } from "next-i18next";
+import { AppProps } from "next/app";
 import DefaultLayout from "@/layouts";
-import './globals.css'
+import "./globals.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <DefaultLayout>
       <Component {...pageProps} />

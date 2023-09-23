@@ -1,6 +1,17 @@
 import clsx from "clsx";
 import React from "react";
 
+type ButtonType = {
+  iconStart?: JSX.Element | null;
+  iconEnd?: JSX.Element | null;
+  children: string | null;
+  className: string;
+  variant?: 'green' | 'transparent' | 'orangeGradient';
+  size?: 'md' | 'lg';
+  href?: string
+  target?: '_self' | '_blank'
+};
+
 const btn_variant = {
   green: "bg-primary-60 hover:bg-primary-40 active:bg-primary-30",
   transparent:
@@ -14,7 +25,7 @@ const btn_size = {
   lg: "px-6 py-3",
 };
 
-function Button(props) {
+function Button(props: ButtonType) {
   const {
     iconStart,
     iconEnd,
@@ -22,6 +33,7 @@ function Button(props) {
     className,
     variant = "green",
     size = "md",
+    target = '_blank',
     ...rest
   } = props;
   return (
@@ -43,7 +55,7 @@ function Button(props) {
   );
 }
 
-function ButtonLink(props) {
+function ButtonLink(props: ButtonType) {
   const {
     href,
     children,
