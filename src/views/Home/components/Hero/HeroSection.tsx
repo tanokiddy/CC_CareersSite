@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
@@ -8,17 +8,33 @@ import SearchIcon from "@/components/atoms/icons/SearchIcon";
 import clsx from "clsx";
 import TextField from "@/components/atoms/components/TextField/TextField";
 
+type HeroContentType = {
+  place_holder: string;
+  swiper_items: SwiperItemType[];
+};
+
+type SwiperItemType = {
+  title: string;
+  src: string;
+  alt: string;
+};
+
 SwiperCore.use([Navigation, Pagination]);
 
 export default function HeroSection() {
   const { t } = useTranslation("home");
-  const hero_content = t("hero_section", { returnObjects: true });
+  const hero_content: HeroContentType = t("hero_section", {
+    returnObjects: true,
+  });
   const { swiper_items } = hero_content;
   const [content, setContent] = useState(swiper_items?.[0]);
   const size = useWindowSize();
   const isDesktop = size.width > 1023;
 
-  const slideIndexChange = (swiper) => {
+  const sectionRef = useRef();
+  sectionRef.current;
+
+  const slideIndexChange = (swiper: SwiperCore) => {
     const newIdx = swiper.snapIndex;
     setContent(swiper_items[newIdx]);
   };
@@ -42,7 +58,8 @@ export default function HeroSection() {
             pagination={{
               clickable: true,
               bulletActiveClass: "!bg-grayscale-20 !w-[60px]",
-              bulletClass: "bg-grayscale-60 w-1.5 h-1.5 mx-1 rounded-full inline-block duration-300 linear",
+              bulletClass:
+                "bg-grayscale-60 w-1.5 h-1.5 mx-1 rounded-full inline-block duration-300 linear",
             }}
             onSnapIndexChange={slideIndexChange}
             className={clsx(
@@ -57,11 +74,14 @@ export default function HeroSection() {
                 key={item.alt}
                 className={clsx("lg:max-w-[540px] !w-full")}
               >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="rounded-lg mx-auto"
-                />
+                {
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="mx-auto rounded-lg"
+                  />
+                }
               </SwiperSlide>
             ))}
           </Swiper>
@@ -91,7 +111,7 @@ export default function HeroSection() {
                 )}
               />
               <Button
-                iconEnd={isDesktop ? null : <SearchIcon color="#FFFFFF"/>}
+                iconEnd={isDesktop ? null : <SearchIcon color="#FFFFFF" />}
                 className={clsx(
                   "[&>span]:p-0 absolute right-[8px] top-[8px] select-none !p-2",
                   "lg:top-[24px] lg:right-[24px] lg:px-4"
