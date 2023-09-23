@@ -1,6 +1,16 @@
 import clsx from "clsx";
 import React from "react";
 
+type TextFieldType = {
+  iconStart?: JSX.Element | null
+  iconEnd?: JSX.Element | null
+  disabled?: boolean
+  className: string
+  placeHolder: string
+  size?: 'md' | 'lg'
+  required?: boolean
+}
+
 const input_size = {
   md: "[&>input]:px-4 [&>input]:py-2",
   lg: "[&>input]:px-6 [&>input]:py-3",
@@ -15,7 +25,7 @@ const TextField = ({
   size = "md",
   required,
   ...rest
-}) => {
+}: TextFieldType) => {
   return (
     <div
       className={clsx(

@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const Header = () => {
+const Header= () => {
   return (
     <div className='h-[94px]'>
     </div>
