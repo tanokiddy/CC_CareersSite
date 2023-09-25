@@ -3,20 +3,26 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useTranslation } from "next-i18next";
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import clsx from "clsx";
-import { Button, ButtonLink } from "@/components/atoms/components/Button/Button";
+import {
+  Button,
+  ButtonLink,
+} from "@/components/atoms/components/Button/Button";
 import { ArrowLeft, ArrowRight } from "@/components/atoms/icons";
 
 import IconButtonMore from "./IconButtonMore";
+import { ProductType } from "@/types/Home";
 
 SwiperCore.use([Pagination, Navigation]);
 
 export default function ProductSection() {
   const { t } = useTranslation("home");
-  const product_intro = t("product_section", { returnObjects: true });
+  const product_intro: ProductType = t("product_section", {
+    returnObjects: true,
+  });
   const { swiper_items } = product_intro;
   const [content, setContent] = useState(swiper_items?.[0]);
 
-  const slideIndexChange = (swiper) => {
+  const slideIndexChange = (swiper: SwiperCore) => {
     const newIdx = swiper.snapIndex;
     setContent(swiper_items[newIdx]);
   };
@@ -55,11 +61,14 @@ export default function ProductSection() {
       >
         {swiper_items?.map((item) => (
           <SwiperSlide key={item.alt}>
-            <img
-              src={item.src}
-              alt={item.alt}
-              className={clsx("object-cover rounded-lg h-full")}
-            />
+            {
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={item.src}
+                alt={item.alt}
+                className={clsx("object-cover rounded-lg h-full")}
+              />
+            }
           </SwiperSlide>
         ))}
       </Swiper>

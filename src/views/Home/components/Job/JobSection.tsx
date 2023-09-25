@@ -3,14 +3,16 @@ import { useTranslation } from "next-i18next";
 import clsx from "clsx";
 import { ButtonLink } from "@/components/atoms/components/Button/Button";
 import ArrowRight from "@/components/atoms/icons/ArrowRight";
+import { JobType } from "@/types/Home";
+import { HotJobType } from "../../stately";
 
-export default function JobSection({ hotJob }) {
+export default function JobSection({ hotJob }: { hotJob: HotJobType }) {
   const { t } = useTranslation("home");
-  const content = t("job_section", { returnObjects: true });
+  const content: JobType = t("job_section", { returnObjects: true });
 
   if (!hotJob) return null;
   const topJob = hotJob.items.slice(0, 4);
-  
+
   return (
     <section className="job-section">
       <div
@@ -20,8 +22,18 @@ export default function JobSection({ hotJob }) {
           "lg:px-32 lg:py-20"
         )}
       >
-        <div className={clsx("flex flex-col justify-center items-start space-y-3", "md:flex-row md:justify-between md:items-end md:space-y-0")}>
-          <h2 className={clsx("text-[28px] leading-[36px] text-grayscale-20", "lg:text-[36px] lg:leading-[48px]")}>
+        <div
+          className={clsx(
+            "flex flex-col justify-center items-start space-y-3",
+            "md:flex-row md:justify-between md:items-end md:space-y-0"
+          )}
+        >
+          <h2
+            className={clsx(
+              "text-[28px] leading-[36px] text-grayscale-20",
+              "lg:text-[36px] lg:leading-[48px]"
+            )}
+          >
             {content.title}
           </h2>
           <ButtonLink
@@ -35,7 +47,11 @@ export default function JobSection({ hotJob }) {
           </ButtonLink>
         </div>
         <div
-          className={clsx("grid grid-cols-1 gap-y-3","sm:grid-cols-2 sm:gap-3", "lg:grid-cols-4 lg:gap-x-[30px]")}
+          className={clsx(
+            "grid grid-cols-1 gap-y-3",
+            "sm:grid-cols-2 sm:gap-3",
+            "lg:grid-cols-4 lg:gap-x-[30px]"
+          )}
         >
           {topJob.map((job) => (
             <ButtonLink
@@ -48,19 +64,21 @@ export default function JobSection({ hotJob }) {
               )}
               href={`/job/${job.job_slug}`}
               key={job.job_slug}
-              target='_blank'
+              target="_blank"
             >
-              <div className="flex justify-between space-x-2">
-                <p className="text-sm text-grayscale-50 font-normal group-hover:text-grayscale-100 line-clamp-1">
-                  {job.location}
+              <>
+                <div className="flex justify-between space-x-2">
+                  <p className="text-sm font-normal text-grayscale-50 group-hover:text-grayscale-100 line-clamp-1">
+                    {job.location}
+                  </p>
+                  <p className="text-sm font-semibold text-grayscale-60 group-hover:text-grayscale-100">
+                    {job.job_time}
+                  </p>
+                </div>
+                <p className="text-[24px] leading-9 text-grayscale-30 font-semibold group-hover:text-grayscale-100 line-clamp-3">
+                  {job.title}
                 </p>
-                <p className="text-sm text-grayscale-60 font-semibold group-hover:text-grayscale-100">
-                  {job.job_time}
-                </p>
-              </div>
-              <p className="text-[24px] leading-9 text-grayscale-30 font-semibold group-hover:text-grayscale-100 line-clamp-3">
-                {job.title}
-              </p>
+              </>
             </ButtonLink>
           ))}
         </div>

@@ -1,21 +1,27 @@
 import { HomeView } from "@/views/Home";
-import { getGlassdoor } from "@/views/Home/stately/GetGlassdoor";
-import { getHotJob } from "@/views/Home/stately/GetHotJob";
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { NextPageContext } from "next";
-import { HotJobType, GlassdoorType } from "@/views/Home/stately";
+import { GetStaticProps, GetStaticPropsContext } from "next";
+import {
+  GlassdoorType,
+  HotJobType,
+  getGlassdoor,
+  getHotJob,
+} from "@/views/Home/stately";
 
-export type HomePageProps = {
+export default function HomePage({
+  hotJob,
+  glassdoor,
+}: {
   hotJob: HotJobType;
   glassdoor: GlassdoorType;
-};
-
-export default function HomePage({ hotJob, glassdoor }: HomePageProps) {
+}) {
   return <HomeView hotJob={hotJob} glassdoor={glassdoor} />;
 }
 
-export async function getStaticProps(context: NextPageContext) {
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
+) => {
   const { locale } = context;
   const hotJob = await getHotJob();
   const glassdoor = await getGlassdoor();
@@ -27,4 +33,4 @@ export async function getStaticProps(context: NextPageContext) {
       glassdoor,
     },
   };
-}
+};

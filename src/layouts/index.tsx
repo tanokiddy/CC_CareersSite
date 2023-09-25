@@ -1,12 +1,16 @@
-import { Footer, Header } from '@/components/molecules'
-import React from 'react'
+import { Footer, Header } from "@/components/molecules";
+import React from "react";
 
-export default function DefaultLayout({ children} : { children: JSX.Element}) {
+export default function DefaultLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <Header />
       {children}
       <Footer />
     </>
-  )
+  );
 }
