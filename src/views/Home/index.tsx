@@ -4,9 +4,15 @@ import BenefitSection from "./components/Benefit/BenefitSection";
 import ProductSection from "./components/Product/ProductSection";
 import FormSubmitSection from "./components/Form/FormSubmitSection";
 import SearchGlassdoorSection from "./components/SearchGlassdoor/SearchGlassdoorSection";
-import { HomePageProps } from "@/pages";
+import { GlassdoorType, HotJobType } from "./stately";
 
-export const HomeView = ({ hotJob, glassdoor }: HomePageProps) => {
+export const HomeView = ({
+  hotJob,
+  glassdoor,
+}: {
+  hotJob: HotJobType;
+  glassdoor: GlassdoorType;
+}) => {
   return (
     <>
       <HeroSection />

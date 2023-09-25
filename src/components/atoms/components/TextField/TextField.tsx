@@ -2,14 +2,15 @@ import clsx from "clsx";
 import React from "react";
 
 type TextFieldType = {
-  iconStart?: JSX.Element | null
-  iconEnd?: JSX.Element | null
-  disabled?: boolean
-  className: string
-  placeHolder: string
-  size?: 'md' | 'lg'
-  required?: boolean
-}
+  iconStart?: JSX.Element | null;
+  iconEnd?: JSX.Element | null;
+  disabled?: boolean;
+  className: string;
+  placeHolder: string;
+  size?: "md" | "lg";
+  required?: boolean;
+  onChange?: Function;
+};
 
 const input_size = {
   md: "[&>input]:px-4 [&>input]:py-2",
@@ -24,6 +25,7 @@ const TextField = ({
   placeHolder,
   size = "md",
   required,
+  onChange,
   ...rest
 }: TextFieldType) => {
   return (
@@ -50,6 +52,7 @@ const TextField = ({
           iconEnd ? "!pr-10" : ""
         )}
         {...rest}
+        onChange={onChange ? (e) => onChange(e) : () => {}}
       />
       {iconEnd ? iconEnd : null}
     </div>

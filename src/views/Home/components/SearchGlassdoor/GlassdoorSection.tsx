@@ -5,10 +5,18 @@ import clsx from "clsx";
 import IconStar from "./IconStar";
 import IconButtonMore from "../Product/IconButtonMore";
 import { ButtonLink } from "@/components/atoms/components/Button/Button";
+import { GlassdoorType } from "../../stately";
+import { GlassdoorSectionType } from "@/types/Home";
 
-export default function GlassdoorSection({ glassdoor }) {
+export default function GlassdoorSection({
+  glassdoor,
+}: {
+  glassdoor: GlassdoorType;
+}) {
   const { t } = useTranslation("home");
-  const content = t("glassdoor_section", { returnObjects: true });
+  const content: GlassdoorSectionType = t("glassdoor_section", {
+    returnObjects: true,
+  });
 
   if (!content) return null;
   return (
@@ -77,9 +85,16 @@ export default function GlassdoorSection({ glassdoor }) {
             </div>
           </div>
           <div className={clsx("flex space-x-3", "lg:items-center")}>
-            <img src={content.image} alt={content.alt} className="w-12 h-12" />
+            {
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={content.image}
+                alt={content.alt}
+                className="w-12 h-12"
+              />
+            }
             <div className="flex flex-col">
-              <span className="text-base text-grayscale-30 font-semibold">
+              <span className="text-base font-semibold text-grayscale-30">
                 Nguyễn Vũ Anh
               </span>
               <span className="text-base text-grayscale-50">Cốc Cốc CEO</span>

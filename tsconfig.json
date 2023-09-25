@@ -6,7 +6,7 @@
         "./src/*"
       ]
     },
-    "target": "ES5",
+    "target": "ES6",
     "allowJs": true,
     "noEmit": true,
     "jsx": "preserve",
