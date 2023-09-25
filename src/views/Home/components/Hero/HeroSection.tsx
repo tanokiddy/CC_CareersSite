@@ -1,13 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import useWindowSize from "@/hooks/useWindowSize";
-import { Button } from "@/components/atoms/components/Button/Button";
+import { Button, ButtonLink } from "@/components/atoms/components/Button/Button";
 import SearchIcon from "@/components/atoms/icons/SearchIcon";
 import clsx from "clsx";
 import TextField from "@/components/atoms/components/TextField/TextField";
 import { HeroContentType } from "@/types/Home";
+import { useDebounce } from "@/hooks/useDebounce";
+import { JobItemType, SearchJob } from "../../stately";
+import { getPath } from "@/utils";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -20,14 +23,44 @@ export default function HeroSection() {
   const [content, setContent] = useState(swiper_items?.[0]);
   const size = useWindowSize();
   const isDesktop = size.width > 1023;
-
-  const sectionRef = useRef();
-  sectionRef.current;
-
   const slideIndexChange = (swiper: SwiperCore) => {
     const newIdx = swiper.snapIndex;
     setContent(swiper_items[newIdx]);
   };
+  
+  const [path, setPath] = useState<string>('')
+  const [searchInput, setSearchInput] = useState<string>("");
+  const [dataSearch, setDataSearch] = useState<JobItemType[] | []>([]);
+  const debouncedValue = useDebounce<string>(searchInput, 200)
+  
+
+  const handleOnSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+  
+
+
+  const fetchSearchApi = async () => {
+    if (searchInput.trim() !== "") {
+      const data = await SearchJob(searchInput, path);
+      setDataSearch(data.items);
+    } else {
+      setDataSearch([]);
+    }
+  };
+
+  useEffect(() => {
+    setPath(getPath(window.location.href))
+  },[])
+
+  useEffect(() => {
+    fetchSearchApi()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[debouncedValue])
 
   if (!content) return null;
   return (
@@ -90,7 +123,7 @@ export default function HeroSection() {
             )}
           />
           <div className="relative w-full space-y-2">
-            <form>
+            <form onSubmit={handleOnSubmit}>
               <TextField
                 placeHolder={hero_content.place_holder}
                 iconStart={isDesktop ? <SearchIcon /> : null}
@@ -99,6 +132,7 @@ export default function HeroSection() {
                   "lg:[&>input]:!p-[29px] lg:[&>input]:!pl-[60px] lg:[&>input]:!text-base [&>input]:w-full [&>input]:!text-sm [&>input]:!p-[17px] [&>input]:placeholder:!text-grayscale-60",
                   "lg:[&>label]:!top-[29px] lg:[&>label]:!left-[29px]"
                 )}
+                onChange={handleOnSearch}
               />
               <Button
                 iconEnd={isDesktop ? null : <SearchIcon color="#FFFFFF" />}
@@ -110,6 +144,28 @@ export default function HeroSection() {
                 {isDesktop ? "Tìm kiếm" : null}
               </Button>
             </form>
+            {dataSearch.length ? (
+              <div
+                className={clsx(
+                  "absolute top-[56px] right-0 py-3 rounded-lg w-full bg-grayscale-100 space-y-2 z-10 flex flex-col items-start",
+                  "lg:top-[84px]"
+                )}
+              >
+                {dataSearch?.map((item) => (
+                  <ButtonLink
+                    variant="transparent"
+                    href={`/job/${item.job_slug}`}
+                    target="_blank"
+                    className={clsx(
+                      "py-2 px-4 text-base !text-grayscale-30 !font-normal [&>span]:p-0 hover:!text-primary-60 active:!text-primary-40"
+                    )}
+                    key={item.job_slug}
+                  >
+                    {item.title}
+                  </ButtonLink>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

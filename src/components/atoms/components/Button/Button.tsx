@@ -6,10 +6,10 @@ type ButtonType = {
   iconEnd?: JSX.Element | null;
   children?: JSX.Element | string | null;
   className: string;
-  variant?: 'green' | 'transparent' | 'orangeGradient';
-  size?: 'md' | 'lg';
-  href?: string
-  target?: '_self' | '_blank'
+  variant?: "green" | "transparent" | "orangeGradient";
+  size?: "md" | "lg";
+  href?: string;
+  target?: "_self" | "_blank";
 };
 
 const btn_variant = {
@@ -33,13 +33,14 @@ function Button(props: ButtonType) {
     className,
     variant = "green",
     size = "md",
-    target = '_blank',
+    target = "_blank",
     ...rest
   } = props;
   return (
     <button
       className={clsx(
-        "flex items-center justify-center outline-none rounded-lg text-grayscale-100 font-semibold disabled:pointer-events-none disabled:text-grayscale-50 disabled:opacity-[0.38]",
+        "flex items-center justify-center outline-none rounded-lg text-grayscale-100 font-semibold",
+        "disabled:pointer-events-none disabled:text-grayscale-50 disabled:opacity-[0.38] disabled:!bg-grayscale-50/30",
         btn_variant[variant],
         btn_size[size],
         className
@@ -81,9 +82,7 @@ function ButtonLink(props: ButtonType) {
       {...rest}
     >
       {iconStart ? iconStart : null}
-      <div className={clsx(iconStart || iconEnd ? "px-2" : "")}>
-        {children}
-      </div>
+      <div className={clsx(iconStart || iconEnd ? "px-2" : "w-full")}>{children}</div>
       {iconEnd ? iconEnd : null}
     </a>
   );

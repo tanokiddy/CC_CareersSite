@@ -4,8 +4,6 @@ import BenefitSection from "./components/Benefit/BenefitSection";
 import ProductSection from "./components/Product/ProductSection";
 import FormSubmitSection from "./components/Form/FormSubmitSection";
 import SearchGlassdoorSection from "./components/SearchGlassdoor/SearchGlassdoorSection";
-import { InferGetStaticPropsType } from "next";
-import { getStaticProps } from "@/pages";
 import { GlassdoorType, HotJobType } from "./stately";
 
 export const HomeView = ({

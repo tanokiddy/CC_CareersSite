@@ -1,4 +1,4 @@
-import { get } from "@/utils/fetchAPI";
+import { get } from "@/utils";
 
 export type GlassdoorType = {
   glassdoor_approve_of_ceo: number;

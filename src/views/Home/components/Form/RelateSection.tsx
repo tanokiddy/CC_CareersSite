@@ -33,14 +33,14 @@ export default function RelateSection({
           <ButtonLink
             variant="transparent"
             key={index}
-            href={item.href}
+            // href={item.href}
             target="_blank"
             className={clsx(
-              "flex-1 p-0 w-full h-full group",
-              "[&>span]:p-0 [&>span]:space-y-4 [&>span]:w-full"
+              "flex-1 p-0 !w-full h-full group",
+              "!p-0 [&>span]:space-y-4 [&>span]:w-full"
             )}
           >
-            <>
+            <div className="space-y-4 ">
               <div className="overflow-hidden rounded-lg">
                 {
                   // eslint-disable-next-line @next/next/no-img-element
@@ -59,7 +59,7 @@ export default function RelateSection({
                   {item.desc}
                 </p>
               </div>
-            </>
+            </div>
           </ButtonLink>
         ))}
       </div>

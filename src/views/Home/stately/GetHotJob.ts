@@ -1,4 +1,4 @@
-import { get } from "@/utils/fetchAPI";
+import { get } from "@/utils";
 
 export type HotJobType = {
   total: number;

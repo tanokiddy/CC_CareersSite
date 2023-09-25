@@ -58,6 +58,7 @@ export default function FormSubmitSection() {
             >
               <TextField
                 required
+                
                 placeHolder={content.place_holder}
                 className={clsx(
                   "placeholder:text-grayscale-60 bg-grayscale-100 rounded-lg [&>input]:!p-[13px]",
