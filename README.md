@@ -1,3 +1,5 @@
+# [Next.js] CC Career site - Recruitment channel/platform
+
 ## Introduction
 Cốc Cốc Careers is developed for two main purposes: 
 - Be the official recruitment channel/platform of Cốc Cốc Co., Ltd.
