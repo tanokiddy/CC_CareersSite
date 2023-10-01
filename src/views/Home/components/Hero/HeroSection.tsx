@@ -95,7 +95,7 @@ export default function HeroSection() {
             {swiper_items.map((item) => (
               <SwiperSlide
                 key={item.alt}
-                className={clsx("lg:max-w-[540px] !w-full")}
+                className={clsx("lg:max-w-[540px] !w-full select-none")}
               >
                 {
                   // eslint-disable-next-line @next/next/no-img-element

@@ -28,7 +28,11 @@ export const getStaticProps: GetStaticProps = async (
 
   return {
     props: {
-      ...(await serverSideTranslations(locale as string, ["home"])),
+      ...(await serverSideTranslations(locale as string, [
+        "home",
+        "header",
+        "footer",
+      ])),
       hotJob,
       glassdoor,
     },

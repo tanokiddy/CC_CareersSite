@@ -107,6 +107,7 @@ module.exports = {
         50: "#25AF50",
         60: "#4FBA69",
         90: "#E1F2E5",
+        95: "#F0F9F3",
         default: "#4FBA69",
       },
     },
