@@ -4,8 +4,8 @@ import React from "react";
 type ButtonType = {
   iconStart?: JSX.Element | null;
   iconEnd?: JSX.Element | null;
-  children?: JSX.Element | string | null;
-  className: string;
+  children?: React.ReactNode | string | null;
+  className?: string;
   variant?: "green" | "transparent" | "orangeGradient";
   size?: "md" | "lg";
   href?: string;
