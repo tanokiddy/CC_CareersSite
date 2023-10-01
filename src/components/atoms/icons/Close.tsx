@@ -1,6 +1,6 @@
 import React from "react";
 
-const Close = ({ color = "#6E7171" }) => {
+const Close = ({ color = "#6E7171" }: { color?: string }) => {
   return (
     <svg
       width="25"

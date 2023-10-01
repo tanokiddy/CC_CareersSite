@@ -1,0 +1,27 @@
+{
+  "menu_header": {
+    "language": "VIE",
+    "menu": [
+      {
+        "title": "Trang chủ",
+        "href": "/"
+      },
+      {
+        "title": "Việc làm",
+        "href": "/jobs"
+      },
+      {
+        "title": "Tài năng trẻ với Cốc Cốc",
+        "href": "/fresher-with-coc-coc"
+      },
+      {
+        "title": "Cuộc sống tại Cốc Cốc",
+        "href": "/life-at-coc-coc"
+      },
+      {
+        "title": "Blog nghề nghiệp",
+        "href": "/blogs"
+      }
+    ]
+  }
+}
