@@ -31,7 +31,7 @@ export default function FormSubmitSection() {
               <img
                 src={content?.images?.src}
                 alt={content?.images?.alt}
-                className={clsx("object-cover h-full", "md:w-auto md:h-full")}
+                className={clsx("object-cover h-full select-none", "md:w-auto md:h-full")}
               />
             }
           </div>
