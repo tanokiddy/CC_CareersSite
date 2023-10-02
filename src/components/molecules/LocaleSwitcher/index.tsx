@@ -19,7 +19,7 @@ const locales = [
   },
 ];
 
-const LocaleSwitcher = () => {
+const LocaleSwitcher = ({ align }: { align?: "center" | "end" | "start" }) => {
   const router = useRouter();
   const { locale: activeLocale } = router;
   const handleSwitchLocale = (locale: string) => {
@@ -32,7 +32,7 @@ const LocaleSwitcher = () => {
         <SelectValue />
         <CarretDown />
       </SelectTrigger>
-      <SelectContent position="popper" align="end" sideOffset={14}>
+      <SelectContent position="popper" align={align || "end"} sideOffset={14}>
         {locales.map((locale) => (
           <SelectItem key={locale.label} value={locale.value}>
             {locale.label}

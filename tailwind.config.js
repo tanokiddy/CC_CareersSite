@@ -14,6 +14,9 @@ module.exports = {
       lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
+      xlg: "1110px",
+      // => @media (min-width: 1110px) { ... }
+
       xl: "1280px",
       // => @media (min-width: 1280px) { ... }
 
@@ -111,7 +114,22 @@ module.exports = {
         default: "#4FBA69",
       },
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        slideDown: {
+          from: { height: 0 },
+          to: { height: "calc(100vh - 60px)" },
+        },
+        slideUp: {
+          from: { height: "calc(100vh - 60px)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease-in-out forwards",
+        slideUp: "slideUp 0.3s ease-in-out forwards",
+      },
+    },
   },
   plugins: [],
-}
+};
