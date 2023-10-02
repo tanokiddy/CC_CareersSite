@@ -72,7 +72,7 @@ const Header = () => {
         )}
       >
         <div className="flex flex-col items-center justify-center space-y-2">
-          {menuHeader.map((item) => (
+          {menuHeader?.map((item) => (
             <ButtonLink
               key={item.title}
               href={item.href}
