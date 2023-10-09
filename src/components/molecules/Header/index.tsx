@@ -66,12 +66,12 @@ const Header = () => {
       </div>
       <div
         className={clsx(
-          "absolute top-15 w-full bg-grayscale-100 flex-col justify-center space-y-15 items-center z-[98] flex overflow-hidden",
-          isOpen ? "animate-slideDown" : "animate-slideUp",
+          "absolute top-15 w-full bg-grayscale-100 flex-col justify-center space-y-15 items-center z-[98] overflow-hidden",
+          isOpen ? "animate-slideDown flex" : "animate-slideUp hidden",
           isDesktop && "animate-slideUp"
         )}
       >
-        <div className="flex flex-col items-center justify-center space-y-2">
+        <div className={clsx("flex flex-col items-center justify-center space-y-2")}>
           {menuHeader?.map((item) => (
             <ButtonLink
               key={item.title}
