@@ -5,9 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'SVN-Poppins';
+  src: ('../fonts/SVN-Poppins-Regular.woff2');
+  src: ('../fonts/SVN-Poppins-SemiBold.woff2')
+}
 body {
   display: block;
   font-family: "SVN-Poppins", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   color: #6e7171;
 }
