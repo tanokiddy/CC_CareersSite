@@ -1,5 +1,6 @@
 @import "swiper/swiper.min.css";
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +13,7 @@
 }
 body {
   display: block;
-  font-family: "SVN-Poppins";
+  font-family: "SVN-Poppins", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6e7171;

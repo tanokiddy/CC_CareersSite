@@ -2,8 +2,8 @@ import clsx from "clsx";
 import React from "react";
 
 type TextFieldType = {
-  iconStart?: JSX.Element | null;
-  iconEnd?: JSX.Element | null;
+  iconStart?: React.ReactElement | null;
+  iconEnd?: React.ReactElement | null;
   disabled?: boolean;
   className: string;
   placeHolder: string;

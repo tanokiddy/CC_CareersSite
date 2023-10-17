@@ -66,12 +66,12 @@ const Header = () => {
       </div>
       <div
         className={clsx(
-          "absolute top-15 w-full bg-grayscale-100 flex-col justify-center space-y-15 items-center z-[98] flex overflow-hidden",
-          isOpen ? "animate-slideDown" : "animate-slideUp",
-          isDesktop && "animate-slideUp"
+          "absolute top-15 w-full bg-grayscale-100 flex flex-col justify-center space-y-15 items-center z-[98] overflow-hidden transition-[height] ease-in-out duration-300",
+          isOpen ? "h-[100vh]" : "h-0",
+          isDesktop && "h-0"
         )}
       >
-        <div className="flex flex-col items-center justify-center space-y-2">
+        <div className={clsx("flex flex-col items-center justify-center space-y-2")}>
           {menuHeader?.map((item) => (
             <ButtonLink
               key={item.title}
@@ -79,7 +79,7 @@ const Header = () => {
               variant="transparent"
               className={clsx(
                 "!text-grayscale-20 !font-normal transition-all duration-200",
-                "hover:!text-primary-60",
+                "hover:!text-primary-60 [&>div]:select-none",
                 isActive(currentPath, item.href)
                   ? "!text-primary-60 !font-semibold"
                   : ""

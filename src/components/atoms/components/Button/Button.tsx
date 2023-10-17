@@ -2,8 +2,8 @@ import clsx from "clsx";
 import React from "react";
 
 type ButtonType = {
-  iconStart?: JSX.Element | null;
-  iconEnd?: JSX.Element | null;
+  iconStart?: React.ReactElement | null;
+  iconEnd?: React.ReactElement | null;
   children?: React.ReactNode | string | null;
   className?: string;
   variant?: "green" | "transparent" | "orangeGradient";
