@@ -25,8 +25,6 @@ export const HomeView = ({
     <>
       <Helmet
         title={helmetInfo.title}
-        description={helmetInfo.description}
-        imageSrc={helmetInfo.imageSrc}
       />
       <HeroSection />
       <JobSection hotJob={hotJob} />
