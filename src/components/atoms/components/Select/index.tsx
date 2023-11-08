@@ -59,7 +59,7 @@ const SelectTrigger = React.forwardRef<
   const classes =
     "w-[56px] font-normal ml-0 flex items-center space-x-1 p-1 focus-visible:outline-none select-none [&>span]:text-sm";
   return (
-    <SelectPrimitive.Trigger ref={ref} className={classes} {...props}>
+    <SelectPrimitive.Trigger ref={ref} className={classes} {...props} aria-label="cc-locale-switcher">
       {children}
     </SelectPrimitive.Trigger>
   );
