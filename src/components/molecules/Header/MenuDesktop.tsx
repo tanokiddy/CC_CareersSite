@@ -11,7 +11,7 @@ const MenuDesktop = ({
   menuHeader: MenuHeaderItem[];
   currentPath: string;
 }) => {
-  return menuHeader.map((item) => (
+  return menuHeader?.map((item) => (
     <ButtonLink
       key={item.href}
       href={item.href}
