@@ -9,7 +9,6 @@ export default function RelateSection({
 }: {
   content: FormContentType;
 }) {
-  const { t } = useTranslation("home");
   const { related_items } = content;
 
   if (!related_items) return null;
@@ -33,7 +32,7 @@ export default function RelateSection({
           <ButtonLink
             variant="transparent"
             key={index}
-            // href={item.href}
+            href={item.href}
             target="_blank"
             className={clsx(
               "flex-1 p-0 !w-full h-full group",
