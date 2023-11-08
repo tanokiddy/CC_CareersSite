@@ -122,7 +122,7 @@
         {
           "title": "Cuốc sống tại Cốc Cốc",
           "desc": "Những khoảnh khắc hạnh phúc mà chúng tôi đã cùng nhau tạo ra",
-          "href": "/life-at-coc-coc",
+          "href": "https://careers.coccoc.com/life-at-coc-coc",
           "image": {
             "src": "/images/cc_related_1.png",
             "alt": "cc_related_1"
@@ -131,7 +131,7 @@
         {
           "title": "Tài năng trẻ với Cốc Cốc",
           "desc": "Các hoạt động kết nối được Cốc Cốc thiết kế dành riêng cho thế hệ tài năng trẻ",
-          "href": "fresher-with-coc-coc",
+          "href": "https://careers.coccoc.com/fresher-with-coc-coc",
           "image": {
             "src": "/images/cc_related_2.png",
             "alt": "cc_related_2"
@@ -140,7 +140,7 @@
         {
           "title": "Blog nghề nghiệp",
           "desc": "Các bài viết chia sẻ kinh nghiệm và góc nhìn của người Cốc Cốc",
-          "href": "blogs",
+          "href": "https://careers.coccoc.com/blogs",
           "image": {
             "src": "/images/cc_related_3.png",
             "alt": "cc_related_3"

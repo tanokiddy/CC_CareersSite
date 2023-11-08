@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import React, { useId } from "react";
 
 type TextFieldType = {
   iconStart?: React.ReactElement | null;
@@ -28,6 +28,7 @@ const TextField = ({
   onChange,
   ...rest
 }: TextFieldType) => {
+  const textFieldId = useId()
   return (
     <div
       className={clsx(
@@ -38,10 +39,10 @@ const TextField = ({
         className
       )}
     >
-      {iconStart ? <label htmlFor="customInput">{iconStart}</label> : null}
+      {iconStart ? <label htmlFor={textFieldId}>{iconStart}</label> : null}
       <input
         required={required}
-        id="customInput"
+        id={textFieldId}
         disabled={disabled}
         type="text"
         placeholder={placeHolder}
