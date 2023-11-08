@@ -45,6 +45,7 @@ function Button(props: ButtonType) {
         btn_size[size],
         className
       )}
+      aria-label="cc-button"
       {...rest}
     >
       {iconStart ? iconStart : null}
@@ -79,6 +80,7 @@ function ButtonLink(props: ButtonType) {
         className
       )}
       target={target}
+      aria-label="cc-button-link"
       {...rest}
     >
       {iconStart ? iconStart : null}

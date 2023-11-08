@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import IconDot from "../Product/IconDot";
 import clsx from "clsx";
@@ -128,7 +128,7 @@ export default function SearchSection() {
             )}
           >
             {item.department.map((department, index) => (
-              <ButtonLink
+              <Button
                 variant="transparent"
                 iconEnd={isDesktop ? <IconDot /> : <AngleRight />}
                 className={clsx(
@@ -142,7 +142,7 @@ export default function SearchSection() {
                 key={index}
               >
                 {department}
-              </ButtonLink>
+              </Button>
             ))}
           </div>
         ))}
