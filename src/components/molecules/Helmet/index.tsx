@@ -3,8 +3,8 @@ import React from "react";
 
 type HelmetPropsType ={
   title: string
-  description: string
-  imageSrc: string
+  description?: string
+  imageSrc?: string
 }
 
 const Helmet = ({title, description, imageSrc}: HelmetPropsType) => {
@@ -24,6 +24,7 @@ const Helmet = ({title, description, imageSrc}: HelmetPropsType) => {
         content={imageSrc || "https://careers.coccoc.com/images/banner.png"}
       />
       <meta property="og:description" content={description || title} />
+      <meta name="description" content={description || title} />
     </Head>
   );
 };
